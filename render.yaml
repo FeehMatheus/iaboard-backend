@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: iaboard-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    autoDeploy: true
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+    build:
+      cacheDirs:
+        - node_modules
